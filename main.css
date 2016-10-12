@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: blue;
+}
+
+button, input[type="text"] {
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+h1 {
+  color: red;
+  padding: 20px;
+}
+
+h2, h3 {
+  color: blue;
+  padding: 5px;
+}
+
+#answer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#answer-list > li {
+  display: block;
+  line-height: 50px;
+  border: 2px solid #eee;
+  margin: 5px auto;
+  vertical-align: middle;
+  text-align: center;
+  color: gray;
+}
+#answer-list > li:hover {background: #eee; cursor: pointer;}
+
+
+#pokemon {
+  max-height: 200px;
+  display: block;
+  margin: 30px auto;
+}
+
+.start-screen {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game, .end-game {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid red;
+  background: white;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.end-game img {
+  max-height: 200px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 10px;
+}

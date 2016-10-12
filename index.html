@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Pokémon quiz application">
+  	<title>"Who's that Pokémon?" Quiz</title>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<div class="start-screen">
+		<h1>"Who's that Pokémon?" Quiz</h1>
+		<button id="start-game">Start Game</button>
+	</div>
+	<div class="game">
+		<h1>Who's that Pokémon?</h1>
+		<h3>Question <span id="current-question">1</span> out of 10</h3>
+		<img id="pokemon" src="images/pikachu_silhouette.png"/>
+		<ul id="answer-list">
+			<li id="choice1">Pikachu</li>
+			<li id="choice2">Eevee</li>
+			<li id="choice3">Flareon</li>
+			<li id="choice4">Raticate</li>
+		</ul>
+		<h2>Current score</h2>
+		<h3><span id="score">0</span> out of 10</h3>
+	</div>
+	<div class="end-game">
+		<h2>Final score</h2>
+		<h3><span id="score">0</span> out of 10</h3>
+		<img src="images/pokemon_celebrate.png"/>
+		<button id="new-game">New Game</button>
+	</div>
+</body>
+</html>
