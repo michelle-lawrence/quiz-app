@@ -17,12 +17,17 @@ button:hover {
 
 h1 {
   color: red;
-  padding: 20px;
+  padding: 10px;
 }
 
 h2, h3 {
   color: blue;
   padding: 5px;
+}
+
+#revealed {
+  color: red;
+  display: none;
 }
 
 #answer-list {
@@ -42,12 +47,13 @@ h2, h3 {
 }
 #answer-list > li:hover {background: #eee; cursor: pointer;}
 
-
 #pokemon {
   max-height: 200px;
   display: block;
   margin: 30px auto;
 }
+
+#nextQ {margin-top: 20px;}
 
 .start-screen {
   width: auto;
