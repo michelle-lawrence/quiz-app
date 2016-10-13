@@ -56,8 +56,6 @@ $(document).ready(function(){
 	});
 });
 
-});
-
 function takeTurn(){
 	quizQuesReset();
 
