@@ -3,36 +3,46 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Pokémon quiz application">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
   	<title>"Who's that Pokémon?" Quiz</title>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-  	<link rel="stylesheet" href="main.css">
+  	<link rel="stylesheet" href="css/float-grid.css" />
+  	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="app.js"></script>
-	<div class="start-screen">
-		<h1>"Who's that Pokémon?" Quiz</h1>
-		<button id="start-game">Start Game</button>
-	</div>
-	<div class="game">
-		<h1>Who's that Pokémon?</h1>
-		<h3>Question <span id="current-question">1</span> out of 10</h3>
-		<h2 id="revealed"></h2>
-		<img id="pokemon" src="images/pikachu_silhouette.png"/>
-		<ul id="answer-list">
-			<li id="choice1">Pikachu</li>
-			<li id="choice2">Eevee</li>
-			<li id="choice3">Flareon</li>
-			<li id="choice4">Raticate</li>
-		</ul>
-		<button id="nextQ">Next Question</button>
-		<h2>Current score: <span id="score">0</span> out of 10</h2>
-	</div>
-	<div class="end-game">
-		<h2>Final score</h2>
-		<h3><span id="finalScore">0</span> out of 10</h3>
-		<img src="images/pokemon_celebrate.png"/>
-		<button id="new-game">New Game</button>
+	<div class="row">
+		<div class="start-screen col-12">
+			<h1>"Who's that Pokémon?"</h1>
+			<button id="start-game">Start Game</button>
+		</div>
+		<div class="game col-12">
+			<h1>Who's that Pokémon?</h1>
+			<div id="question-num">
+				<h3>Question:<br/><span id="current-question">1</span> of 10</h3>
+			</div>
+			<div id="scoreboard">
+				<h3>Current score:<br/>
+				<span id="score">0</span> out of 10</h3>
+			</div>
+			<h2 id="revealed"></h2>
+			<img id="pokemon" src="images/pikachu_silhouette.png"/>
+			<ul id="answer-list">
+				<li id="choice1">Pikachu</li>
+				<li id="choice2">Eevee</li>
+				<li id="choice3">Flareon</li>
+				<li id="choice4">Raticate</li>
+			</ul>
+			<button id="nextQ">Next Question</button>
+		</div>
+		<div class="end-game col-12">
+			<h2>Final score</h2>
+			<h3><span id="finalScore">0</span> out of 10</h3>
+			<img src="images/pokemon_celebrate.png"/>
+			<button id="new-game">New Game</button>
+		</div>
 	</div>
 </body>
 </html>

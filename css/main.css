@@ -8,7 +8,7 @@
 }
 
 html {
-  background: #39b7e7 url("../images/pika-bg.jpg") repeat center center;
+  background: #0d5279 url("../images/pika-bg.jpg") repeat center center;
 }
 
 button, input[type="text"] {
@@ -23,6 +23,7 @@ button:hover {
 h1 {
   color: red;
   padding: 10px;
+  font-family: PokemonSolid;
 }
 
 h2, h3 {
@@ -30,7 +31,12 @@ h2, h3 {
   padding: 5px;
 }
 
-#score-board {
+#question-num, #scoreboard {
+  height: 100px;
+  width: auto;
+  background: url("../images/spark.png") no-repeat center center;
+}
+#scoreboard {
   display: none;
   height: 100px;
   position: absolute;
@@ -52,14 +58,16 @@ h2, h3 {
 
 #answer-list > li {
   display: block;
+  max-width: 620px;
   line-height: 50px;
-  border: 2px solid #eee;
+  border: 2px solid #dc1613;
+  background: #0d5279;
   margin: 5px auto;
   vertical-align: middle;
   text-align: center;
-  color: gray;
+  color: #dc1613;
 }
-#answer-list > li:hover {background: #eee; cursor: pointer;}
+#answer-list > li:hover, #answer-list > li:focus {opacity: 0.8; cursor: pointer;}
 
 #pokemon {
   max-height: 200px;
@@ -70,19 +78,20 @@ h2, h3 {
 #nextQ {margin-top: 20px;}
 
 .start-screen {
-  width: auto;
-  height: auto;
-  margin: 0 auto;
+  position: relative;
+  top: 25%;
+  height: 100%;
   text-align: center;
   font-family: PokemonSolid;
+  border: 5px solid #0d5279;
+  background: #f8c713;
 }
 
 .game, .end-game {
   display: none;
-  max-width: 600px;
   margin: 0 auto;
-  border: 2px solid red;
-  background: white;
+  border: 5px solid #0d5279;
+  background: #f8c713;
   margin-top: 50px;
   text-align: center;
 }
