@@ -14,30 +14,37 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="app.js"></script>
 	<div class="row">
-		<div class="start-screen col-12">
+		<div id="start-screen" class="col-12">
 			<h1>"Who's that Pokémon?"</h1>
 			<button id="start-game">Start Game</button>
 		</div>
-		<div class="game col-12">
-			<h1>Who's that Pokémon?</h1>
-			<div id="question-num">
-				<h3>Question:<br/><span id="current-question">1</span> of 10</h3>
+		<div id="game" class="col-12">
+			<div class="row">
+				<div id="question-num" class="col-3">
+					<span>Q<br/><span id="current-question">1</span> of 10</span>
+				</div>
+				<div class="col-6">
+					<h1>Who's that Pokémon?</h1>
+				</div>
+				<div id="score-board" class="col-3">
+					<span>Score<br/><span id="score">0</span> of 10</span>
+				</div>
 			</div>
-			<div id="scoreboard">
-				<h3>Current score:<br/>
-				<span id="score">0</span> out of 10</h3>
+			<div class="row">
+				<div class="col-12"><h2 id="revealed"></h2></div>
 			</div>
-			<h2 id="revealed"></h2>
-			<img id="pokemon" src="images/pikachu_silhouette.png"/>
-			<ul id="answer-list">
-				<li id="choice1">Pikachu</li>
-				<li id="choice2">Eevee</li>
-				<li id="choice3">Flareon</li>
-				<li id="choice4">Raticate</li>
-			</ul>
+			<div class="row">
+				<div class="col-12"><img id="pokemon" src="images/pikachu_silhouette.png"/></div>
+			</div>
+			<div id="answer-list" class="row">
+				<button class="col-6" id="choice1">Pikachu</button>
+				<button class="col-6" id="choice2">Eevee</button>
+				<button class="col-6" id="choice3" tabindex="0">Flareon</button>
+				<button class="col-6" id="choice4" tabindex="0">Raticate</button>
+			</div>
 			<button id="nextQ">Next Question</button>
 		</div>
-		<div class="end-game col-12">
+		<div id="end-game" class="col-12">
 			<h2>Final score</h2>
 			<h3><span id="finalScore">0</span> out of 10</h3>
 			<img src="images/pokemon_celebrate.png"/>

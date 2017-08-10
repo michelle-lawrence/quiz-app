@@ -20,64 +20,68 @@ button:hover {
   cursor: pointer;
 }
 
-h1 {
-  color: red;
-  padding: 10px;
+h1, h2, h3 {
+  color: #dc1613;
+  padding: 5px;
   font-family: PokemonSolid;
 }
 
-h2, h3 {
-  color: blue;
-  padding: 5px;
-}
-
-#question-num, #scoreboard {
-  height: 100px;
-  width: auto;
+#question-num, #score-board {
   background: url("../images/spark.png") no-repeat center center;
+  display: table;
+  position: relative;
+  top:10px;
+  height: 6em;
+  font-weight: bold;
+  color: #0d5279;
 }
-#scoreboard {
-  display: none;
-  height: 100px;
-  position: absolute;
-  right: 15%;
-  top: 25%;
-  text-align: center;
+#question-num > span, #score-board > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+#question-num {
+  transform: rotate(-20deg);
+}
+#score-board {
+  transform: rotate(20deg);
 }
 
 #revealed {
-  color: red;
   display: none;
+  color: #dc1613;
+  padding: 0;
+  margin: 0;
 }
 
 #answer-list {
-  list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 0;
 }
-
-#answer-list > li {
+#answer-list button {
   display: block;
-  max-width: 620px;
   line-height: 50px;
   border: 2px solid #dc1613;
   background: #0d5279;
-  margin: 5px auto;
   vertical-align: middle;
   text-align: center;
   color: #dc1613;
+  margin: 10px 0 0;
+  padding: 0;
 }
-#answer-list > li:hover, #answer-list > li:focus {opacity: 0.8; cursor: pointer;}
+#answer-list button:hover, #answer-list button:focus {
+  background: #fff !important;
+  cursor: pointer;
+}
 
 #pokemon {
   max-height: 200px;
   display: block;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 #nextQ {margin-top: 20px;}
 
-.start-screen {
+#start-screen {
   position: relative;
   top: 25%;
   height: 100%;
@@ -87,7 +91,7 @@ h2, h3 {
   background: #f8c713;
 }
 
-.game, .end-game {
+#game, #end-game {
   display: none;
   margin: 0 auto;
   border: 5px solid #0d5279;
@@ -96,7 +100,7 @@ h2, h3 {
   text-align: center;
 }
 
-.end-game img {
+#end-game img {
   max-height: 200px;
   display: block;
   margin: 30px auto;

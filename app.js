@@ -15,36 +15,37 @@ var currentQuestion = 1;
 
 $(document).ready(function(){
 	fillObjects();
+	$("#start-game").focus();
 
 	$("#start-game").click(function(event){
-		$(".start-screen").hide();
-		$(".end-game").hide();
-		$(".score-board").show();
-		$(".game").show();
+		$("#start-screen").hide();
+		$("#end-game").hide();
+		$("#game").show();
+
 		currentQuestion = 1;
 		gameQuiz.score = 0;
 		takeTurn();
 	});
 
 	$("#new-game").click(function(event){
-		$(".start-screen").show();
-		$(".game").hide();
-		$(".end-game").hide();
+		$("#start-screen").show();
+		$("#game").hide();
+		$("#end-game").hide();
 	});
 
-	$("ul#answer-list").on("click", "li", function(event){
-		var answer = $(this).closest("li").text();
+	$("div#answer-list").on("click", "button", function(event){
+		var answer = $(this).closest("button").text();
 		var currentQuesObj = gameQuiz.questions[currentQuestion - 1];
 		var correctAnswer = currentQuesObj.answerOptions[currentQuesObj.answerIndex];
 		if (answer == correctAnswer) {
 			gameQuiz.score++;
 			$("#score").text(gameQuiz.score);
 			$("#revealed").text("It's " + answer + "!");
-			$(this).closest("li").css("background", "#5bd75b");
+			$(this).closest("button").css("background", "#5bd75b");
 		}
 		else {
 			$("#revealed").text("Sorry! It's " + correctAnswer + ".");
-			$(this).closest("li").css({
+			$(this).closest("button").css({
 				'background': '#ed5f6a',
 				'color':'#fff'
 			});
@@ -57,6 +58,7 @@ $(document).ready(function(){
 		document.getElementById("pokemon").src = currentQuesObj.answer;
 
 		document.getElementById("nextQ").disabled = false;
+		$("#nextQ").focus();
 	});
 
 	$("#nextQ").click(function(){
@@ -67,6 +69,7 @@ $(document).ready(function(){
 
 function takeTurn(){
 	quizQuesReset();
+	$("#choice1").focus();
 
 	if (currentQuestion > 10){
 		$("#finalScore").text(gameQuiz.score);
@@ -90,13 +93,14 @@ function quizQuesReset() {
 	document.getElementById("nextQ").disabled = true;
 
  	var answerList = document.getElementById("answer-list");
-	var answers = answerList.getElementsByTagName("li");
+	var answers = answerList.getElementsByTagName("button");
 	for (var i = 0; i < answers.length; ++i) {
 		$("#choice" + (i+1)).css({
 				'background': '#0d5279',
 				'color': '#dc1613'
 			});
 	}
+	document.getElementById("choice1").focus();
 };
 
 
