@@ -37,9 +37,18 @@ $(document).ready(function(){
 		var answer = $(this).closest("button").text();
 		var currentQuesObj = gameQuiz.questions[currentQuestion - 1];
 		var correctAnswer = currentQuesObj.answerOptions[currentQuesObj.answerIndex];
+
+		//prevent answering again on same question
+		var answerList = document.getElementById("answer-list");
+		var answers = answerList.getElementsByTagName("button");
+		for (var i = 0; i < answers.length; ++i) {
+			document.getElementById("choice" + (i+1)).disabled = false;
+		}
+
 		if (answer == correctAnswer) {
 			gameQuiz.score++;
 			$("#score").text(gameQuiz.score);
+			$("#score-sm").text(gameQuiz.score);
 			$("#revealed").text("It's " + answer + "!");
 			$(this).closest("button").css("background", "#5bd75b");
 		}
@@ -73,12 +82,15 @@ function takeTurn(){
 
 	if (currentQuestion > 10){
 		$("#finalScore").text(gameQuiz.score);
-		$(".game").hide();
-		$(".end-game").show();
+		$("#game").hide();
+		$("#end-game").show();
+		$("#new-game").focus();
 	}
 	else {
 		$("#score").text(gameQuiz.score);
+		$("#score-sm").text(gameQuiz.score);
 		$("#current-question").text(currentQuestion);
+		$("#current-question-sm").text(currentQuestion);
 		var currentQuesObj = gameQuiz.questions[currentQuestion - 1];
 		document.getElementById("pokemon").src = currentQuesObj.question;
 		$("#choice1").text(currentQuesObj.answerOptions[0]);
@@ -96,11 +108,12 @@ function quizQuesReset() {
 	var answers = answerList.getElementsByTagName("button");
 	for (var i = 0; i < answers.length; ++i) {
 		$("#choice" + (i+1)).css({
-				'background': '#0d5279',
+				'background': '#39b7e7',
 				'color': '#dc1613'
 			});
+		document.getElementById("choice" + (i+1)).disabled = false;
 	}
-	document.getElementById("choice1").focus();
+	$("#choice1").focus();
 };
 
 

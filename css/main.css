@@ -8,7 +8,7 @@
 }
 
 html {
-  background: #0d5279 url("../images/pika-bg.jpg") repeat center center;
+  background: #39b7e7 url("../images/pika-bg.png") repeat center center;
 }
 
 button, input[type="text"] {
@@ -33,12 +33,15 @@ h1, h2, h3 {
   top:10px;
   height: 6em;
   font-weight: bold;
-  color: #0d5279;
+  color: #39b7e7;
 }
 #question-num > span, #score-board > span {
   display: table-cell;
   vertical-align: middle;
 }
+#question-num > span:nth-child(2), #score-board > span:nth-child(2) {
+    display: none;
+  }
 #question-num {
   transform: rotate(-20deg);
 }
@@ -61,7 +64,7 @@ h1, h2, h3 {
   display: block;
   line-height: 50px;
   border: 2px solid #dc1613;
-  background: #0d5279;
+  background: #39b7e7;
   vertical-align: middle;
   text-align: center;
   color: #dc1613;
@@ -83,19 +86,19 @@ h1, h2, h3 {
 
 #start-screen {
   position: relative;
-  top: 25%;
+  margin-top: 50px;
   height: 100%;
   text-align: center;
   font-family: PokemonSolid;
-  border: 5px solid #0d5279;
-  background: #f8c713;
+  border: 5px solid #ad150b;
+  background: #fffa5c;
 }
 
 #game, #end-game {
   display: none;
   margin: 0 auto;
-  border: 5px solid #0d5279;
-  background: #f8c713;
+  border: 5px solid #ad150b;
+  background: #fffa5c;
   margin-top: 50px;
   text-align: center;
 }
@@ -105,4 +108,28 @@ h1, h2, h3 {
   display: block;
   margin: 30px auto;
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+  h1 {font-size: 1.8em;}
+
+  #pokemon {max-height: 150px;}
+
+  #start-screen, #game, #end-game {margin-top: 20px;}
+
+  #question-num, #score-board {top: 0;}
+  #question-num, #score-board, #question-num > span:nth-child(2), 
+  #score-board > span:nth-child(2) {
+    position: relative;
+    background: none;
+    display: inline;
+    height: 2em;
+    transform: rotate(0deg);
+  }
+  #score-board > span:nth-child(2) {top: -10px;}
+  #question-num > span:nth-child(2) {top: 10px;}
+  #question-num > span:first-child, #score-board > span:first-child {
+    display: none;
+  }
+
 }
